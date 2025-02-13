@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Themed Page</title>
+    <link rel="stylesheet" href="apple.css" />
+
+</head>
+<body>
+
+    <h1>will you BEE my valentine?</h1>
+    <h2>or are you too sweet for me, honey :3</h2>
+
+    <div class="honeycomb"></div>
+
+    <a href="https://www.youtube.com/watch?v=d1NjkYjRn34"><button class="yes-button">YES</button></a>
+    <button class="no-button" onclick="showAlertAndRedirect()">NO EW</button>
+    <footer>
+        <p>PLEASE PLEASE PLEASE PLEASE PLEASE PLEASEPLEASE PLEASE PLEASEPLEASE PLEASE PLEASEPLEASE PLEASE PLEASEPLEASE PLEASE PLEASE </p>
+    </footer>
+<script>
+    function createHearts(num) {
+            const heartImages = ["/img/bee.jpg", "/img/bee.png", "/img/bee3.jpg", "/img/bee4.webp"]; // Add more if needed
+
+            for (let i = 0; i < num; i++) {
+                let heart = document.createElement("img");
+                heart.src = heartImages[Math.floor(Math.random() * heartImages.length)];
+                heart.classList.add("heart");
+
+                // Random position
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight;
+
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+
+                document.body.appendChild(heart);
+            }
+        }
+        createHearts(35);
+        function showAlertAndRedirect() {
+            // Show alert
+            alert("what.");
+
+            // Redirect to another page (replace with your target URL)
+            window.location.href = "https://www.youtube.com/watch?v=TFlku89PE0I";  // Change URL as needed
+        }
+</script>
+</body>
+</html>

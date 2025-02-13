@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>test :3</title>
+  </head>
+  <body style="background-color:pink">
+    <header></header>
+    <main>
+    <center><div class="w3-theme-l3">
+    <h1>countdown to valentine's Day ❤️</h1>    </div>
+    <button onclick="window.location.href='apple.html'">test</button>
+    <button id="valentineButton" onclick="window.location.href='apple.html'">test</button>
+    <p id="countdown"></p>
+    <p> ^ SO CLOSE ^</p>
+
+    </center>
+    <footer id="footer">brought to you by your SECRET ADMIRER :3</footer>
+    <script>
+
+function updateCountdown() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const valentinesDay = new Date(year, 1, 14); // February 14
+
+            const timeDifference = valentinesDay - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById("countdown").style.display = "none"; // Hide countdown
+                document.getElementById("valentineButton").style.display = "block"; // Show button
+                return; // Stop the countdown
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+            setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown();
+
+        function createHearts(num) {
+            const heartImages = ["/img/heart1.gif", "/img/heart2.gif", "/img/heart3.png"]; // Add more if needed
+
+            for (let i = 0; i < num; i++) {
+                let heart = document.createElement("img");
+                heart.src = heartImages[Math.floor(Math.random() * heartImages.length)];
+                heart.classList.add("heart");
+
+                // Random position
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight;
+
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+
+                document.body.appendChild(heart);
+            }
+        }
+        createHearts(35);
+
+        function createSparkle() {
+            let sparkle = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            sparkle.setAttribute("viewBox", "0 0 24 24");
+            sparkle.setAttribute("class", "sparkle");
+            
+            // Random size (10px - 25px)
+            let size = Math.random() * 20 + 40;
+            sparkle.setAttribute("width", size);
+            sparkle.setAttribute("height", size);
+
+            // Random position
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+
+            // Random animation duration (1s - 2s)
+            let duration = Math.random() * 1 + 1;
+            sparkle.style.animationDuration = `${duration}s`;
+
+            // SVG Star (Vector Sparkle)
+            let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("fill", "white");
+            path.setAttribute("d", "M12 2L14 9H22L15 14L17 22L12 17L7 22L9 14L2 9H10L12 2Z");
+
+            sparkle.appendChild(path);
+            document.body.appendChild(sparkle);
+
+            // Remove sparkle after animation completes
+            setTimeout(() => {
+                sparkle.remove();
+            }, duration * 1000);
+        }
+
+        // Generate sparkles every 250ms (adjust for more or fewer sparkles)
+        setInterval(createSparkle, 250);
+        createSparkle()
+  </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

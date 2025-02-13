@@ -1,0 +1,112 @@
+.w3-theme-gradient {
+    color: #000 !important;
+    background:-webkit-linear-gradient(top,#64B5F6 25%,#42A5F5 75%)}
+
+    #valentineButton {
+        display: none;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #ff66b2; /* Pink */
+        color: white; /* White text */
+        border: none;
+        cursor: pointer;
+        border-radius: 20px; /* Rounded edges */
+        margin-top: 20px;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Hover effect */
+    #valentineButton:hover {
+        background-color: #ff3385; /* Darker pink */
+        transform: scale(1.05); /* Slightly enlarges */
+    }
+    
+    /* Click effect */
+    #valentineButton:active {
+        background-color: #e60073; /* Even darker pink */
+        transform: scale(0.98); /* Press-down effect */
+    }
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+Button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ff66b2; /* Pink */
+    color: white; /* White text */
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Rounded edges */
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+Button:hover {
+    background-color: #ff3385; /* Darker pink */
+    transform: scale(1.05); /* Slightly enlarges */
+}
+
+/* Click effect */
+Button:active {
+    background-color: #e60073; /* Even darker pink */
+    transform: scale(0.98); /* Press-down effect */
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+  }
+  
+  .heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    animation: float 5s infinite alternate ease-in-out;
+}
+
+/* Floating effect */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    animation: sparkleFade 1.5s ease-in-out;
+    pointer-events: none;
+}
+
+/* Sparkle animation: fade in and out */
+@keyframes sparkleFade {
+    0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+    100% { opacity: 0; transform: scale(0.5) rotate(90deg); }
+}
